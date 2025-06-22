@@ -158,7 +158,9 @@ Authorization: Bearer <token_gerado>
 ---
 ## Decisões Técnicas Importantes
 
-- **Idempotência:** Garantir que múltiplas requisições iguais criem uma única transação.
+- **Idempotência:** Garantir que múltiplas requisições iguais criem uma única transação.  
+  A idempotência é controlada via header `Idempotency-Key`, que deve conter um **UUID v4** gerado pelo cliente.  
+  Caso o mesmo valor seja reutilizado, a API retornará a mesma resposta da primeira requisição processada com sucesso.
 - **Rate Limiting:** Limitar a frequência de criação de transações por usuário.
 - **Operações Atômicas:** Usar transações Firestore para garantir consistência ao atualizar saldo e transação.
 - **Arquitetura serverless:** Uso do Firebase Cloud Functions para escalabilidade automática.
