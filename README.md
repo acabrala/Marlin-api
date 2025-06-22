@@ -46,33 +46,47 @@ Este projeto é construído como uma aplicação serverless usando Firebase (Clo
 
 ### Passos para rodar localmente
 
-1. **Clone o repositório:**
-    ```bash
-    git clone <url-do-repositorio>
-    cd <nome-do-repositorio>
-    ```
+## 1. **Clone o repositório e acesse a pasta do projeto**
 
-2. **Instale as dependências:**
-    ```bash
-    cd functions
-    npm install
-    ```
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-3. **Configure o Firebase:**
-    - Login:
-      ```bash
-      firebase login
-      ```
-    - Inicialize o projeto Firebase (se ainda não tiver feito):
-      ```bash
-      firebase init
-      ```
-      Selecione Firestore, Functions (TypeScript), Hosting e Emulators.
+### 2. **Instale as dependências**
 
-4. **Inicie os emuladores:**
-    ```bash
-    firebase emulators:start
-    ```
+No diretório raiz do projeto:
+
+```bash
+npm install
+```
+
+### 3. **Configure o Firebase**
+
+Se ainda não tiver feito login com sua conta Firebase:
+
+```bash
+firebase login
+```
+
+Depois, vincule o projeto local a um projeto do Firebase da sua conta:
+
+```bash
+firebase use --add
+```
+
+> Isso permite selecionar um projeto existente do Firebase para associar ao seu `.firebaserc`.
+
+### 4. **Inicie os emuladores**
+
+Para iniciar os emuladores locais com as configurações existentes:
+
+```bash
+npm run serve
+```
+
+> Esse comando já deve usar o `firebase emulators:start` configurado no `package.json`.
+
 
 ### URLs locais importantes
 
